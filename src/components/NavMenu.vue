@@ -21,7 +21,6 @@ icons.forEach(icon => {
       <div class="nav-container">
         <h2>Mark Gray</h2>
         <nav class="menu">
-
           <div>
             <div>
               <ul>
@@ -44,21 +43,21 @@ icons.forEach(icon => {
 
 <style scoped>
 /* https://codepen.io/bradtraversy/pen/vMGBjQ */
-:root {
-  --primary-color: #110031;
-  --overlay-color: rgba(13, 110, 139, 0.75);
-  --menu-speed: 0.75s;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  margin-bottom: 3rem;
+  border: solid 1px red;
+}
+
+
 .menu-wrap {
-  border: solid red 1px;
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -67,25 +66,25 @@ icons.forEach(icon => {
 .nav-container {
   margin: auto;
   overflow: hidden;
-  padding: 0 3rem;
+  padding: 2.5rem 3rem;
 }
 
 
 .menu-wrap .toggler {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1.6rem;
+  right: 1.6rem;
   z-index: 2;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   opacity: 0;
 }
 
 .menu-wrap .hamburger {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1.6rem;
+  right: 1.6rem;
   z-index: 1;
   width: 60px;
   height: 60px;
@@ -101,12 +100,14 @@ icons.forEach(icon => {
   position: relative;
   flex: none;
   width: 100%;
-  height: 2px;
-  background: #110031;
+  height: 3px;
+  background: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+  border-radius: 2px;
+
 }
 
 /* Hamburger Lines - Top & Bottom */
@@ -114,10 +115,11 @@ icons.forEach(icon => {
 .menu-wrap .hamburger > div::after {
   content: '';
   position: absolute;
+  border-radius: 2px;
   z-index: 1;
   top: -10px;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: inherit;
 }
 
@@ -172,16 +174,17 @@ icons.forEach(icon => {
 }
 
 .menu-wrap .nav-container .menu > div {
-  background: rgba(13, 110, 139, 0.75);
+  background: var(--overlay-color);
   border-radius: 50%;
   width: 200vw;
   height: 200vw;
   display: flex;
   flex: none;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   transform: scale(0);
   transition: all 0.4s ease;
+  padding-top: 9rem;
 }
 
 .menu-wrap .nav-container .menu > div > div {
@@ -194,13 +197,13 @@ icons.forEach(icon => {
 
 .menu-wrap .nav-container .menu > div > div > ul > li {
   list-style: none;
-  color: #110031;
+  color: var(--primary-color);
   font-size: 1.5rem;
   padding: 1rem;
 }
 
 .menu-wrap .nav-container .menu > div > div > ul > li > a {
-  color: inherit;
+  color: #fff;
   text-decoration: none;
   transition: color 0.4s ease;
 }

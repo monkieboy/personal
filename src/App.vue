@@ -6,56 +6,41 @@ import NavMenu from "./components/NavMenu.vue";
   <NavMenu />
 </template>
 
-<style scoped>
+<style>
 
-@import url('https://fonts.cdnfonts.com/css/nexa-bold');
+@import url('https://fonts.cdnfonts.com/css/nexa');
 @import url('https://fonts.cdnfonts.com/css/dm-sans');
 
 :root {
+  --primary-color: rgba(11,00,31, 1);
+  --overlay-color: rgba(11,00,31, 0.90);
+  --menu-speed: 0.75s;
   font-size: 62.5%;
 }
 
 body {
   background: #fff;
-  font-family: 'Nexa Bold', sans-serif;
+  font-family: 'Nexa', sans-serif;
   color: #110031;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin: 0;
 }
 
-/*
-nav a:first-of-type {
-border: 0;
+h1 {
+  font-family: 'Nexa', "Tibetan Machine Uni";
+  font-size: 2.9rem;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+h2 {
+  font-size: 2.4rem;
+  font-family: "DM Sans";
 }
-*/
+
+a {
+  font-size: 2.1rem;
+}
 </style>
