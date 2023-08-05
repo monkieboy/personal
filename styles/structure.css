@@ -1,0 +1,140 @@
+/* Variables */
+
+:root {
+  --hero-font: 'Yaldevi', 'Alfa Slab One';
+  --norm-font: 'Yaldevi';
+  --type-text: 'Source Code Pro', 'Silkscreen';
+  --font-color: #545;
+  --bg-color: #fee;
+  --bg-color-opp: #bff;
+  --top-bottom-bg: #dff;
+  --main-anc: #999;
+  --nav-anc: #222;
+}
+
+[data-theme="dark"]{
+  --font-color: #ddc;
+  --bg-color: #423;
+  --bg-color-opp: #1a201a;
+  --top-bottom-bg: #1a201a;
+  --main-anc: #999;
+  --nav-anc: #efe;
+}
+
+/* End Variables */
+
+/* Universal elements */
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--norm-font);
+  color: var(--font-color);
+  background: linear-gradient(35deg, var(--bg-color), 25%, var(--bg-color-opp), 85%, var(--bg-color));
+}
+
+a {
+  color: var(--nav-anc);
+  text-decoration: none;
+  font-family: var(--norm-font);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* End Universal Elements */
+
+/* Header */
+
+#hero-title {
+  width: 60%;
+}
+
+#hero-image {
+  width: 40%;
+  min-height: max-content;
+  background: url("/images/me.jpeg");
+  background-size: cover;
+}
+
+.type-text {
+  font-family: var(--type-text);
+  font-size: 85%;
+}
+
+/* End Header */
+
+/* Main */
+
+.hf-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#hero {
+  font-family: var(--hero-font);
+}
+
+/* End Main */
+
+/* Footer */
+
+footer {
+  margin-top: auto;
+}
+
+/* End Footer */
+
+/* Combinations */
+
+.hf-container, main {
+  max-width: 1200px;
+}
+
+header, footer {
+  width: 100%;
+}
+
+header, footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: transparent; /*var(--top-bottom-bg);*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 80px;
+  flex-wrap: nowrap;
+}
+/* End Combinations */
+
+/* Media Queries */
+@media (min-width: 2200px) {
+  .hf-container, main {
+    width: 994px;
+  }
+  #hero-title {
+    font-size: 180%;
+  }
+  section {
+    width: 100%;
+    margin-top:15px;
+  }
+}
+@media (min-width: 1200px) {
+  .hf-container, main {
+    width: 994px;
+  }
+  #hero-title {
+    font-size: 150%;
+  }
+  section {
+    width: 100%;
+    margin-top:15px;
+  }
+}
+/* End Media Queries */
