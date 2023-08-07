@@ -1,34 +1,34 @@
-<script setup lang="ts">
+<script setup lang="ts" defer>
 
 import {RouterLink, RouterView} from "vue-router";
 
-const icons = document.querySelectorAll('.icon');
-icons.forEach(icon => {
-  icon.addEventListener('click', (event) => {
-    icon.classList.toggle("open");
-  });
-});
+
+
+function toggle() {
+  let menu  = document.getElementById('toggle') as HTMLInputElement | null;
+  if (menu !== null) menu.checked = !menu.checked;
+}
 
 </script>
 
 <template>
   <header>
     <div class="menu-wrap">
-      <input type="checkbox" class="toggler">
+      <input type="checkbox" class="toggle" id="toggle">
       <div class="hamburger">
         <div></div>
       </div>
       <div class="nav-container">
         <h2>Mark Gray</h2>
         <nav class="menu">
-          <div>
-            <div>
+          <div id="menu-overlay">
+            <div style="z-index: 10000">
               <ul>
                 <li>
-                  <RouterLink to="/">Home</RouterLink>
+                  <RouterLink to="/" @click="toggle">Home</RouterLink>
                 </li>
                 <li>
-                  <RouterLink to="/about">About</RouterLink>
+                  <RouterLink to="/resume" @click="toggle">Resume</RouterLink>
                 </li>
               </ul>
             </div>
@@ -38,7 +38,7 @@ icons.forEach(icon => {
     </div>
   </header>
 
-  <RouterView/>
+  <RouterView />
 </template>
 
 <style scoped>
@@ -52,9 +52,16 @@ icons.forEach(icon => {
 
 header {
   margin-bottom: 3rem;
-  border: solid 1px red;
 }
 
+#menu-overlay {
+  position: absolute;
+  top: 50px;
+}
+
+.menu > div > div a {
+  font-size: 2.6rem;
+}
 
 .menu-wrap {
   width: 100%;
@@ -70,8 +77,8 @@ header {
 }
 
 
-.menu-wrap .toggler {
-  position: absolute;
+.menu-wrap .toggle {
+  position: fixed;
   top: 1.6rem;
   right: 1.6rem;
   z-index: 2;
@@ -82,7 +89,7 @@ header {
 }
 
 .menu-wrap .hamburger {
-  position: absolute;
+  position: fixed;
   top: 1.6rem;
   right: 1.6rem;
   z-index: 1;
@@ -107,7 +114,6 @@ header {
   justify-content: center;
   transition: all 0.4s ease;
   border-radius: 2px;
-
 }
 
 /* Hamburger Lines - Top & Bottom */
@@ -129,33 +135,33 @@ header {
 }
 
 /* Toggler Animation */
-.menu-wrap .toggler:checked + .hamburger > div {
+.menu-wrap .toggle:checked + .hamburger > div {
   transform: rotate(135deg);
 }
 
 /* Turns Lines Into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
+.menu-wrap .toggle:checked + .hamburger > div:before,
+.menu-wrap .toggle:checked + .hamburger > div:after {
   top: 0;
   transform: rotate(90deg);
 }
 
 /* Rotate On Hover When Checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
+.menu-wrap .toggle:checked:hover + .hamburger > div {
   transform: rotate(225deg);
 }
 
 /* Show Menu */
-.menu-wrap .toggler:checked ~ .nav-container .menu {
+.menu-wrap .toggle:checked ~ .nav-container .menu {
   visibility: visible;
 }
 
-.menu-wrap .toggler:checked ~ .nav-container .menu > div {
+.menu-wrap .toggle:checked ~ .nav-container .menu > div {
   transform: scale(1);
   transition-duration: 0.75s;
 }
 
-.menu-wrap .toggler:checked ~ .nav-container .menu > div > div {
+.menu-wrap .toggle:checked ~ .nav-container .menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease 0.4s;
 }

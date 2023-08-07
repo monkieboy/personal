@@ -13,7 +13,7 @@ import NavMenu from "./components/NavMenu.vue";
 
 :root {
   --primary-color: rgba(11,00,31, 1);
-  --overlay-color: rgba(11,00,31, 0.90);
+  --overlay-color: rgba(11,00,31, 1);
   --menu-speed: 0.75s;
   font-size: 62.5%;
 }
@@ -30,6 +30,14 @@ body {
   margin: 0;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem 0 3rem;
+  align-items: center;
+  z-index: -1;
+}
+
 h1 {
   font-family: 'Nexa', "Tibetan Machine Uni";
   font-size: 2.9rem;
@@ -41,6 +49,10 @@ h2 {
 }
 
 a {
-  font-size: 2.1rem;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
 }
 </style>

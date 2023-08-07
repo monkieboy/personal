@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import Hero from "../components/Hero.vue";
 import MySkills from "../components/MySkills.vue";
+import Knowledge from "@/components/Knowledge.vue";
+import Interests from "@/components/Interests.vue";
+import OpenUniversity from "@/components/OpenUniversity.vue";
+import ReadyToWork from "@/components/ReadyToWork.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
   <main>
     <Hero />
     <MySkills />
+    <Knowledge />
+    <Interests />
+    <OpenUniversity />
+    <ReadyToWork />
+    <Footer />
   </main>
 </template>
 
@@ -19,7 +29,6 @@ import MySkills from "../components/MySkills.vue";
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    border: solid 1px red;
   }
 
   h1 {
